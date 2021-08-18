@@ -1,20 +1,20 @@
 import React from "react";
 
-function Sushi(props) {
+function Sushi({ sushi, eatSushi, sushiPic=" " }) {
   return (
     <div className="sushi">
-      <div className="plate" onClick={/* Give me a callback! */ null}>
+      <div className="plate" onClick={() => eatSushi(sushi)}>
         {/* Tell me if this sushi has been eaten! */}
-        {false ? null : (
+        {sushiPic===" " ? null : (
           <img
-            src={/* Give me an image source! */ null}
-            alt={/* Give me a name! */ "Sushi"}
+            src={sushiPic}
+            alt={`${sushi.name} Sushi`}
             width="100%"
           />
         )}
       </div>
       <h4 className="sushi-details">
-        {/* Give me a name! */} - ${/* Give me a price! */}
+        {sushi.name} - ${sushi.price}
       </h4>
     </div>
   );
